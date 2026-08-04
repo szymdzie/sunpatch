@@ -18,30 +18,44 @@ footer{margin-top:48px;padding-top:20px;border-top:1px solid #dce0ea;font-size:.
 <body>
 <div class="wrap">
 <h1>Privacy Policy</h1>
-<p class="date">Sunpatch · last updated 28 July 2026</p>
+<p class="date">Sunpatch · last updated 4 August 2026</p>
 
-<p>Sunpatch does not collect your data. There is no account, no server of ours, and no analytics. This policy explains the few places data moves at all.</p>
+<p>Sunpatch works without an account, and used that way nothing you enter leaves your phone. There is an optional sign-in that backs your spots up, and one feature — the Sun Coach — that needs a connection. This policy says exactly what moves, when, and to whom. We do not sell anything to anyone, we run no analytics and we do not track you across apps or websites.</p>
 
 <h2>What stays on your device</h2>
-<p>Your spots, the obstructions you measure, your notes and your settings are stored in a single file inside the app's own storage on your phone. We cannot read it. Deleting the app deletes it.</p>
+<p>Your spots, the obstructions you measure, your notes and your settings are stored in a single file inside the app's own storage on your phone. Signed out, that file is the whole app: we cannot read it, nothing is transmitted, and deleting the app deletes it.</p>
+
+<h2>The optional account</h2>
+<p>You can sign in with an email address and password, with Apple, or with Google. Signing in is never required to measure a spot, to see any chart, or to buy Sunpatch Pro. It does two things: it backs your spots up so a lost phone is not a lost season, and it unlocks the Sun Coach described below.</p>
+<p>If you sign in, we hold:</p>
+<ul>
+<li>Your email address and a user identifier, through Firebase Authentication. If you use Sign in with Apple and choose to hide your address, we only ever see Apple's relay address.</li>
+<li>Your spots — their names, your notes, the obstructions you measured, and each spot's coordinates — stored in your own private area of Firebase Cloud Firestore. Security rules allow only your own signed-in account to read or write it. No other user can reach it, and we do not mine it.</li>
+</ul>
+<p>These are held for as long as your account exists, and are used only to give your spots back to you on your devices. Firebase is operated by Google as our processor: <a href="https://firebase.google.com/support/privacy">firebase.google.com/support/privacy</a>.</p>
 
 <h2>Location</h2>
-<p>If you grant location access, your coordinates are used to work out where the sun travels for a spot. The coordinates are stored on your device with that spot and are never transmitted to us. You can decline the permission and type coordinates by hand instead — everything still works.</p>
+<p>If you grant location access, your coordinates are used to work out where the sun travels for a spot — latitude is what decides the sun's path. You can decline the permission and type coordinates by hand instead; everything still works. The coordinates are stored on your device with that spot. They leave the device only if you are signed in, in which case they are backed up with the spot as described above, and in the rounded form the Sun Coach uses below.</p>
 
 <h2>Camera and motion</h2>
 <p>The camera is used as a viewfinder while you aim at the top of a fence or tree. No photo is captured, saved or sent. The phone's tilt and heading are read live to turn that aim into an angle, and are not recorded.</p>
 
 <h2>The Sun Coach</h2>
-<p>The Sun Coach is the one feature that uses the internet. When — and only when — you tap Ask, the app sends OpenAI a short brief containing: the spot's name, its calculated sun figures, the obstructions you measured, and a coordinate rounded to two decimal places (about one kilometre). No identifier, no account and no contact details are included, because none exist. You can read the exact text before sending it, using the eye icon on that screen. Neither we nor OpenAI store it as part of a profile. OpenAI's handling of API data is described at <a href="https://openai.com/policies/api-data-usage-policies">openai.com/policies/api-data-usage-policies</a>.</p>
+<p>The Sun Coach is the one feature that needs the internet, and the one that needs both an account and Sunpatch Pro — it runs on a server and costs money every time it answers. When, and only when, you tap Ask, the app sends a short brief through our own Cloud Function to OpenAI. The brief contains the spot's name, its calculated sun figures, the obstructions you measured, and a coordinate rounded to two decimal places, which is about one kilometre. You can read the exact text before sending it, using the eye icon on that screen.</p>
+<p>Your account identifier is used by our function to check that you have Pro and to apply a fair-use limit per hour. It is not sent to OpenAI, and OpenAI does not receive your email, your name or your exact location. We do not keep the questions or the answers, and OpenAI does not use API data to train its models: <a href="https://openai.com/policies/api-data-usage-policies">openai.com/policies/api-data-usage-policies</a>.</p>
 
 <h2>Purchases</h2>
-<p>Purchases are processed by Apple. We use RevenueCat to check whether a purchase is active. RevenueCat receives the anonymous app user identifier Apple provides and the transaction details; it does not receive your name, email or location. Their policy: <a href="https://www.revenuecat.com/privacy">revenuecat.com/privacy</a>.</p>
+<p>Purchases are processed by Apple. We use RevenueCat to check whether a purchase is active. RevenueCat receives an app user identifier — your Sunpatch account identifier if you are signed in, otherwise an anonymous one Apple provides — and the transaction details. It does not receive your name, your email or your location. Their policy: <a href="https://www.revenuecat.com/privacy">revenuecat.com/privacy</a>.</p>
+
+<h2>Deleting your account</h2>
+<p>Settings → Your account → <em>Delete account and all data</em>. It removes your spots from the cloud, removes them from the device, deletes the account itself, and revokes Sunpatch's access to your Apple ID if you signed in with Apple. It happens straight away and cannot be undone. Deleting the account does not cancel a subscription — Apple handles that in your Apple ID settings.</p>
+<p>Signing out instead leaves your spots on the device and stops them syncing.</p>
 
 <h2>Children</h2>
-<p>Sunpatch is rated 4+ and is not directed at children. It collects nothing from anyone, of any age.</p>
+<p>Sunpatch is rated 4+ and is not directed at children. Signed out it collects nothing from anyone, of any age.</p>
 
 <h2>Your rights</h2>
-<p>Because we hold no personal data about you, there is nothing for us to export or erase. Everything the app knows is on your device and under your control. If you would like to ask about any of this, write to <a href="mailto:chochoapps@gmail.com">chochoapps@gmail.com</a>.</p>
+<p>If you never sign in, we hold no personal data about you at all and there is nothing for us to export or erase. If you do sign in, you may ask us for a copy of what we hold, ask us to correct it, or delete all of it yourself from inside the app at any time using the button above. Under the GDPR the controller is Szymon Dziedzic, and the lawful basis is the contract you enter by using the app. To ask about any of this, or to complain, write to <a href="mailto:chochoapps@gmail.com">chochoapps@gmail.com</a>.</p>
 
 <h2>Changes</h2>
 <p>If this policy changes in a way that affects you, the updated version will appear here with a new date, and the change will be described in the app's release notes.</p>
